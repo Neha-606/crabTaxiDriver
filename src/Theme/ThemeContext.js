@@ -1,5 +1,5 @@
 import React, { createContext, useState } from 'react';
-import { LightTheme, DarkTheme } from './Colour';
+import { lightColors, darkColors } from './Colour';
 
 export const ThemeContext = createContext();
 
@@ -8,7 +8,7 @@ export const ThemeProvider = ({ children }) => {
 
   const toggleTheme = () => setIsDark(!isDark);
 
-  const theme = isDark ? DarkTheme : LightTheme;
+  const theme = isDark ? darkColors : lightColors;
 
   return (
     <ThemeContext.Provider value={{ theme, isDark, toggleTheme }}>
